@@ -1,5 +1,12 @@
 FROM blacksquare/ruby:2.3
 
+ENV DEBIAN_FRONTEND noninteractive
+
+RUN apt-get update \
+	&& apt-get install -y --no-install-recommends \
+		libsqlite3-dev \
+	&& rm -rf /var/lib/apt/lists/*
+
 RUN gem install mailcatcher --no-rdoc --no-ri
 
 ENV SMTP_PORT=1025 \
