@@ -1,4 +1,4 @@
-FROM blacksquare/ruby:2.3
+FROM blacksquare/ruby:2.4
 
 ENV DEBIAN_FRONTEND noninteractive
 
